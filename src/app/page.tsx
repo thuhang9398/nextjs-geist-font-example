@@ -1,12 +1,9 @@
 "use client"
 
-import { useState } from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { BookingForm } from "@/components/booking-form"
-import { Menu } from "lucide-react"
+import { useBooking } from "@/components/booking-form-provider"
 
 const treatments = [
   {
@@ -42,83 +39,13 @@ const galleryImages = [
   "https://images.pexels.com/photos/3997391/pexels-photo-3997391.jpeg?auto=compress&cs=tinysrgb&w=1600"
 ]
 
-const menuItems = [
-  { label: "Trang Chủ", href: "#home" },
-  { label: "Dịch Vụ", href: "#services" },
-  { label: "Thư Viện", href: "#gallery" },
-  { label: "Liên Hệ", href: "#contact" }
-]
-
 export default function Home() {
-  const [isBookingOpen, setIsBookingOpen] = useState(false)
+  const { openBookingForm } = useBooking()
 
   return (
-    <main className="min-h-screen">
-      {/* Booking Form Dialog */}
-      <BookingForm isOpen={isBookingOpen} onClose={() => setIsBookingOpen(false)} />
-
-      {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 shadow-sm">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <div className="text-2xl font-bold bg-gradient-to-r from-pink-500 to-pink-600 bg-clip-text text-transparent">
-            SEOUL CENTER
-          </div>
-          
-          {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8">
-            {menuItems.map((item) => (
-              <a 
-                key={item.href}
-                href={item.href} 
-                className="text-gray-700 hover:text-pink-600 font-medium"
-              >
-                {item.label}
-              </a>
-            ))}
-          </div>
-
-          {/* Mobile Menu */}
-          <div className="md:hidden">
-            <Sheet>
-              <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="md:hidden">
-                  <Menu className="h-6 w-6" />
-                </Button>
-              </SheetTrigger>
-              <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-                <nav className="flex flex-col gap-4">
-                  {menuItems.map((item) => (
-                    <a
-                      key={item.href}
-                      href={item.href}
-                      className="block px-2 py-1 text-lg text-gray-700 hover:text-pink-600"
-                    >
-                      {item.label}
-                    </a>
-                  ))}
-                  <Button 
-                    onClick={() => setIsBookingOpen(true)}
-                    className="w-full bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white mt-4"
-                  >
-                    Đặt Lịch Ngay
-                  </Button>
-                </nav>
-              </SheetContent>
-            </Sheet>
-          </div>
-
-          {/* Book Now Button (Desktop) */}
-          <Button 
-            onClick={() => setIsBookingOpen(true)}
-            className="hidden md:block bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white"
-          >
-            Đặt Lịch Ngay
-          </Button>
-        </div>
-      </nav>
-
+    <>
       {/* Hero Section */}
-      <section className="pt-28 pb-16 px-4 bg-gradient-to-b from-pink-50 via-white to-white">
+      <section className="pt-8 pb-16 px-4 bg-gradient-to-b from-pink-50 via-white to-white">
         <div className="container mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -132,7 +59,7 @@ export default function Home() {
                 Trải nghiệm dịch vụ làm đẹp cao cấp với công nghệ hiện đại và đội ngũ chuyên gia hàng đầu
               </p>
               <Button 
-                onClick={() => setIsBookingOpen(true)}
+                onClick={openBookingForm}
                 className="bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white text-lg px-8 py-6"
               >
                 Tư Vấn Miễn Phí
@@ -183,7 +110,7 @@ export default function Home() {
                     <Button 
                       variant="outline" 
                       className="border-pink-200 text-pink-600 hover:bg-pink-50"
-                      onClick={() => setIsBookingOpen(true)}
+                      onClick={openBookingForm}
                     >
                       Đặt Lịch →
                     </Button>
@@ -279,48 +206,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <h3 className="text-xl font-bold mb-4 bg-gradient-to-r from-pink-400 to-pink-500 bg-clip-text text-transparent">
-                SEOUL CENTER
-              </h3>
-              <p className="text-gray-400">Chăm sóc sắc đẹp chuyên nghiệp</p>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Liên Kết</h4>
-              <ul className="space-y-2">
-                <li><a href="#home" className="text-gray-400 hover:text-pink-400">Trang Chủ</a></li>
-                <li><a href="#services" className="text-gray-400 hover:text-pink-400">Dịch Vụ</a></li>
-                <li><a href="#gallery" className="text-gray-400 hover:text-pink-400">Thư Viện</a></li>
-                <li><a href="#contact" className="text-gray-400 hover:text-pink-400">Liên Hệ</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Dịch Vụ</h4>
-              <ul className="space-y-2">
-                <li><a href="#" className="text-gray-400 hover:text-pink-400">Trẻ Hóa Da</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-pink-400">Điều Trị Mụn</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-pink-400">Tẩy Tế Bào Chết</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-pink-400">Nâng Cơ RF</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Kết Nối</h4>
-              <div className="flex space-x-4">
-                <a href="#" className="text-gray-400 hover:text-pink-400">Instagram</a>
-                <a href="#" className="text-gray-400 hover:text-pink-400">Facebook</a>
-              </div>
-            </div>
-          </div>
-          <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 Seoul Center. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
-    </main>
+    </>
   )
 }
