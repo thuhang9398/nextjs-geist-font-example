@@ -1,4 +1,5 @@
 import React from "react"
+import Link from "next/link"
 
 export default function Footer() {
   return (
@@ -14,21 +15,21 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Liên Kết</h4>
             <ul className="space-y-2">
-              <li><a href="/" className="text-gray-400 hover:text-pink-400">Trang Chủ</a></li>
-              <li><a href="/gioi-thieu" className="text-gray-400 hover:text-pink-400">Giới Thiệu</a></li>
-              <li><a href="/#services" className="text-gray-400 hover:text-pink-400">Dịch Vụ</a></li>
-              <li><a href="/#gallery" className="text-gray-400 hover:text-pink-400">Thư Viện</a></li>
-              <li><a href="/lien-he" className="text-gray-400 hover:text-pink-400">Liên Hệ</a></li>
-              <li><a href="/terms" className="text-gray-400 hover:text-pink-400">Terms</a></li>
+              <li><Link href="/" className="text-gray-400 hover:text-pink-400">Trang Chủ</Link></li>
+              <li><Link href="/gioi-thieu" className="text-gray-400 hover:text-pink-400">Giới Thiệu</Link></li>
+              <li><Link href="/#services" className="text-gray-400 hover:text-pink-400">Dịch Vụ</Link></li>
+              <li><Link href="/#gallery" className="text-gray-400 hover:text-pink-400">Thư Viện</Link></li>
+              <li><Link href="/lien-he" className="text-gray-400 hover:text-pink-400">Liên Hệ</Link></li>
+              <li><Link href="/terms" className="text-gray-400 hover:text-pink-400">Terms</Link></li>
             </ul>
           </div>
           <div>
             <h4 className="font-semibold mb-4">Dịch Vụ</h4>
             <ul className="space-y-2">
-              <li><a href="/#services" className="text-gray-400 hover:text-pink-400">Trẻ Hóa Da</a></li>
-              <li><a href="/#services" className="text-gray-400 hover:text-pink-400">Điều Trị Mụn</a></li>
-              <li><a href="/#services" className="text-gray-400 hover:text-pink-400">Tẩy Tế Bào Chết</a></li>
-              <li><a href="/#services" className="text-gray-400 hover:text-pink-400">Nâng Cơ RF</a></li>
+              <li><Link href="/#services" className="text-gray-400 hover:text-pink-400">Trẻ Hóa Da</Link></li>
+              <li><Link href="/#services" className="text-gray-400 hover:text-pink-400">Điều Trị Mụn</Link></li>
+              <li><Link href="/#services" className="text-gray-400 hover:text-pink-400">Tẩy Tế Bào Chết</Link></li>
+              <li><Link href="/#services" className="text-gray-400 hover:text-pink-400">Nâng Cơ RF</Link></li>
             </ul>
           </div>
           <div>

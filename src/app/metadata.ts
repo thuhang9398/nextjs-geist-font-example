@@ -1,4 +1,4 @@
-import { Metadata } from "next"
+import { Metadata, Viewport } from "next"
 
 export const metadata: Metadata = {
   title: "Seoul Beauty Center | Chăm Sóc Sắc Đẹp Chuyên Nghiệp",
@@ -17,8 +17,6 @@ export const metadata: Metadata = {
     canonical: "https://seoulcenter.vn"
   },
   authors: [{ name: "Seoul Beauty Center" }],
-  viewport: "width=device-width, initial-scale=1",
-  themeColor: "#ec4899",
   icons: {
     icon: "/favicon.ico"
   },
@@ -26,4 +24,10 @@ export const metadata: Metadata = {
     google: "google-site-verification-code", // Replace with actual verification code
   },
   category: "Beauty & Spa"
+}
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#ec4899"
 }

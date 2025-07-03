@@ -28,10 +28,12 @@ export default function GioiThieuPage() {
         </div>
         
         <div className="relative h-[400px] rounded-lg overflow-hidden mb-12">
-          <img 
+          <Image 
             src="https://images.pexels.com/photos/3755761/pexels-photo-3755761.jpeg?auto=compress&cs=tinysrgb&w=1600" 
             alt="Về Chúng Tôi" 
-            className="w-full h-full object-cover"
+            fill
+            sizes="(max-width: 768px) 100vw, 100vw"
+            className="object-cover"
           />
           <div className="absolute inset-0 bg-black opacity-30"></div>
         </div>
@@ -88,10 +90,12 @@ export default function GioiThieuPage() {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="relative h-48 rounded-lg overflow-hidden mb-4">
-                <img 
+                <Image 
                   src="https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg?auto=compress&cs=tinysrgb&w=1600" 
                   alt="Chuyên gia 1" 
-                  className="w-full h-full object-cover"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover"
                 />
               </div>
               <h3 className="font-semibold mb-2">Dr. Kim Min Ji</h3>
@@ -99,10 +103,12 @@ export default function GioiThieuPage() {
             </div>
             <div className="text-center">
               <div className="relative h-48 rounded-lg overflow-hidden mb-4">
-                <img 
+                <Image 
                   src="https://images.pexels.com/photos/5327921/pexels-photo-5327921.jpeg?auto=compress&cs=tinysrgb&w=1600" 
                   alt="Chuyên gia 2" 
-                  className="w-full h-full object-cover"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover"
                 />
               </div>
               <h3 className="font-semibold mb-2">Dr. Park Ji Sung</h3>
@@ -110,10 +116,12 @@ export default function GioiThieuPage() {
             </div>
             <div className="text-center">
               <div className="relative h-48 rounded-lg overflow-hidden mb-4">
-                <img 
+                <Image 
                   src="https://images.pexels.com/photos/5407206/pexels-photo-5407206.jpeg?auto=compress&cs=tinysrgb&w=1600" 
                   alt="Chuyên gia 3" 
-                  className="w-full h-full object-cover"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover"
                 />
               </div>
               <h3 className="font-semibold mb-2">Dr. Lee Sun Mi</h3>

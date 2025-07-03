@@ -5,12 +5,12 @@ import "./globals.css"
 import Header from "@/components/layout/Header"
 import Footer from "@/components/layout/Footer"
 import { BookingFormProvider } from "@/components/booking-form-provider"
-import { metadata } from "./metadata"
+import { metadata, viewport } from "./metadata"
 
 const inter = Inter({ subsets: ["latin"], variable: '--font-inter' })
 const poppins = Poppins({ subsets: ["latin"], weight: ['300', '400', '500', '600', '700'], variable: '--font-poppins' })
 
-export { metadata }
+export { metadata, viewport }
 
 export default function RootLayout({
   children,

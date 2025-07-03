@@ -1,30 +1,9 @@
 "use client"
 
-import type { Metadata } from "next"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { useBooking } from "@/components/booking-form-provider"
-
-export const metadata: Metadata = {
-  title: "Seoul Beauty Center | Chăm Sóc Sắc Đẹp Chuyên Nghiệp",
-  description: "Seoul Beauty Center - Trung tâm chăm sóc sắc đẹp hàng đầu với công nghệ hiện đại và đội ngũ chuyên gia. Các dịch vụ: trẻ hóa da, điều trị mụn, tẩy tế bào chết, nâng cơ RF.",
-  openGraph: {
-    title: "Seoul Beauty Center | Chăm Sóc Sắc Đẹp Chuyên Nghiệp",
-    description: "Trung tâm chăm sóc sắc đẹp hàng đầu với công nghệ hiện đại và đội ngũ chuyên gia",
-    images: ["https://images.pexels.com/photos/3764579/pexels-photo-3764579.jpeg"],
-    type: "website",
-    locale: "vi_VN",
-  },
-  keywords: "spa, làm đẹp, chăm sóc da, trẻ hóa da, điều trị mụn, nâng cơ, seoul center",
-  robots: "index, follow",
-  alternates: {
-    canonical: "https://seoulcenter.vn"
-  },
-  authors: [{ name: "Seoul Beauty Center" }],
-  viewport: "width=device-width, initial-scale=1",
-  themeColor: "#ec4899"
-}
 
 const treatments = [
   {
