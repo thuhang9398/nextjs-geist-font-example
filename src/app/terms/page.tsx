@@ -1,3 +1,20 @@
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Điều Khoản & Điều Kiện | Seoul Beauty Center",
+  description: "Điều khoản và điều kiện sử dụng dịch vụ tại Seoul Beauty Center. Tìm hiểu về quy định, chính sách và cam kết của chúng tôi.",
+  openGraph: {
+    title: "Điều Khoản & Điều Kiện | Seoul Beauty Center",
+    description: "Điều khoản và điều kiện sử dụng dịch vụ tại Seoul Beauty Center",
+    images: ["https://images.pexels.com/photos/3764579/pexels-photo-3764579.jpeg"],
+  },
+  keywords: "điều khoản, điều kiện, chính sách, quy định, seoul center",
+  robots: "index, follow",
+  alternates: {
+    canonical: "https://seoulcenter.vn/terms"
+  }
+}
+
 export default function TermsPage() {
   return (
     <section className="py-16 px-4">
