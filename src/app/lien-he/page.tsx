@@ -1,12 +1,27 @@
-"use client"
+import { ContactForm } from "@/components/contact-form"
+import type { Metadata } from "next"
 
-import { Button } from "@/components/ui/button"
+export const metadata: Metadata = {
+  title: "Liên Hệ | Seoul Beauty Center",
+  description: "Liên hệ với Seoul Center để được tư vấn miễn phí về các dịch vụ làm đẹp và chăm sóc da. Đội ngũ chuyên gia của chúng tôi luôn sẵn sàng hỗ trợ bạn.",
+  openGraph: {
+    title: "Liên Hệ | Seoul Beauty Center",
+    description: "Liên hệ với Seoul Center để được tư vấn miễn phí về các dịch vụ làm đẹp và chăm sóc da",
+    images: ["https://images.pexels.com/photos/3764579/pexels-photo-3764579.jpeg"],
+    type: "website",
+    locale: "vi_VN",
+    siteName: "Seoul Beauty Center"
+  },
+  keywords: "liên hệ spa, đặt lịch spa, tư vấn làm đẹp, seoul center, spa hà nội, chăm sóc da, làm đẹp",
+  robots: "index, follow",
+  alternates: {
+    canonical: "https://seoulcenter.vn/lien-he"
+  },
+  authors: [{ name: "Seoul Beauty Center" }],
+  category: "Beauty & Spa"
+}
 
 export default function LienHePage() {
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle form submission logic here
-  }
 
   return (
     <section className="py-16 bg-white">
@@ -79,69 +94,7 @@ export default function LienHePage() {
 
             <div className="bg-pink-50 p-6 rounded-xl">
               <h3 className="font-semibold text-xl mb-6">Gửi Tin Nhắn</h3>
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                    Họ và tên
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    className="w-full px-4 py-2 rounded-lg border border-pink-200 focus:outline-none focus:border-pink-500"
-                    placeholder="Nhập họ và tên của bạn"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-                    Số điện thoại
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    required
-                    className="w-full px-4 py-2 rounded-lg border border-pink-200 focus:outline-none focus:border-pink-500"
-                    placeholder="Nhập số điện thoại của bạn"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    className="w-full px-4 py-2 rounded-lg border border-pink-200 focus:outline-none focus:border-pink-500"
-                    placeholder="Nhập email của bạn (không bắt buộc)"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                    Nội dung
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={4}
-                    required
-                    className="w-full px-4 py-2 rounded-lg border border-pink-200 focus:outline-none focus:border-pink-500"
-                    placeholder="Nhập nội dung tin nhắn của bạn"
-                  ></textarea>
-                </div>
-
-                <Button 
-                  type="submit"
-                  className="w-full bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white py-3"
-                >
-                  Gửi Tin Nhắn
-                </Button>
-              </form>
+              <ContactForm />
             </div>
           </div>
         </div>
